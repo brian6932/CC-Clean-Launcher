@@ -28,7 +28,7 @@ The reason that this has two files is because `AdobeIPCBroker.exe` is more of a 
 
 ### 5:
 
-- Dowload the batch files
+- [Dowload the batch files](https://github.com/brian6932/CC-Clean-Launcher/archive/refs/heads/main.zip)
 
 ### 6:
 
