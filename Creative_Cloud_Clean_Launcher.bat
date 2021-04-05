@@ -15,7 +15,7 @@ IF %a%==2 (start "" "C:\Program Files\Adobe\Adobe Premiere Pro 2021\Adobe Premie
 IF %a%==3 (start "" "C:\Program Files\Adobe\Adobe Media Encoder 2021\Adobe Media Encoder.exe")
 IF %a%==4 (start "" "C:\Program Files\Adobe\Adobe After Effects 2021\Support Files\AfterFX.exe")
 
-timeout 3
+timeout 4
 taskkill /f /im "Adobe Desktop Service.exe"
 taskkill /f /im "CoreSync.exe"
 taskkill /f /im "Creative Cloud Helper.exe"
