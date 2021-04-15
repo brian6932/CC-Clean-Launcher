@@ -10,30 +10,18 @@ The reason that this has two files is because `AdobeIPCBroker.exe` is more of a 
 
 ### 2:
 
-- Go to: "C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\IPCBox"
-
-- Cut AdobeIPCBroker.exe and paste it into your backup folder
-
-### 3:
-
 - Go to: "C:\Program Files\Adobe\Adobe Creative Cloud Experience"
 
 - Cut CCLibrary.exe and paste it into your backup folder
 
-### 4:
-
-- Go to: "C:\Program Files (x86)\Common Files\Adobe\OOBE\PDApp\IPC"
-
-- Cut CCXProcess.exe and paste it into your backup folder
-
-### 5:
+### 3:
 
 - [Dowload the batch files](https://github.com/brian6932/CC-Clean-Launcher/archive/refs/heads/main.zip)
 
-### 6:
+### 4:
 
 - Run Creative_Cloud_Clean_Launcher.bat and choose the program you want to open
 
-### 7:
+### 5:
 
 - Whenever you're done using any CC programs and have them closed, run CC_Exit.bat, it will kill any remnants (`AdobeIPCBroker.exe` is really only one)
