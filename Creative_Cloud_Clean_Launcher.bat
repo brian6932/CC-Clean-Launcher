@@ -1,7 +1,7 @@
 @echo off
 title Creative Cloud Clean Launcher
 color F
-echo Press the number corresponding to the CC program you want to launch:
+echo Enter the number corresponding to the CC program you want to launch:
 echo.
 echo 1. Photoshop 2021
 echo 2. Premiere Pro 2021
