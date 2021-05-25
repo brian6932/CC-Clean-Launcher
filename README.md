@@ -5,11 +5,13 @@ The reason that this has two files is because `AdobeIPCBroker.exe` is more of a 
 ## Usage:
 
 ### 1:
-
-- Make a backup folder for some of the files (you could also rename them, although I prefer to have the backups centralized in a folder with specified path names as their folder paths)
+- Under services, disable `Adobe Genuine Monitor Service (AGMService)` and `Adobe Genuine Software Integrity Service (AGSService)`
+- And again under services, set `AdobeUpdateService` to manual 
+- These will reset everytime you update your CC programs, so make sure to set it each time.
 
 ### 2:
 
+- Make a backup folder for the following file (you could also rename them, although I prefer to have the backups centralized in a folder with specified path names as their folder paths)
 - Go to: "C:\Program Files\Adobe\Adobe Creative Cloud Experience"
 
 - Cut CCLibrary.exe and paste it into your backup folder
@@ -24,4 +26,4 @@ The reason that this has two files is because `AdobeIPCBroker.exe` is more of a 
 
 ### 5:
 
-- Whenever you're done using any CC programs and have them closed, run CC_Exit.bat, it will kill any remnants (`AdobeIPCBroker.exe` is really only one)
+- Whenever you're done using any CC programs and have them closed, run CC_Exit.bat, it will kill any remnants (`AdobeIPCBroker.exe` should be the main one)
