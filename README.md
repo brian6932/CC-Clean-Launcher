@@ -7,7 +7,8 @@ The reason that this has two files is because `AdobeIPCBroker.exe` is more of a 
 ### 1:
 - Under services, disable `Adobe Genuine Monitor Service (AGMService)` and `Adobe Genuine Software Integrity Service (AGSService)`
 - And again under services, set `AdobeUpdateService` to manual 
-- These will reset everytime you update your CC programs, so make sure to set it each time.
+- These will reset everytime you update your CC programs, so make sure to set it each time
+- For a more permanent solution you can try to delete everything in: `C:\Program Files (x86)\Common Files\Adobe\AdobeGCClient` and then remove all user permissions, including system, so that the files don't restore
 
 ### 2:
 
