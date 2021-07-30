@@ -9,7 +9,8 @@
 - Under services, disable `Adobe Genuine Monitor Service (AGMService)` and `Adobe Genuine Software Integrity Service (AGSService)`
 - And again under services, set `AdobeUpdateService` to manual 
 - These will reset everytime you update your CC programs, so make sure to set it each time
-- For a more permanent solution you can try to delete everything in: `C:\Program Files (x86)\Common Files\Adobe\AdobeGCClient` and then remove all user permissions, including system, so that the files don't restore, this only works for the AG Services. The AdobeUpdateService is a necessary one, so just make sure to set it to manually each time you update any CC programs
+- For a more permanent solution, you can try to delete everything in: `C:\Program Files (x86)\Common Files\Adobe\AdobeGCClient` and then remove all user permissions, including system, so that the files don't restore
+- The permanent solution only works for the AG services. The `AdobeUpdateService` is a necessary one, so just make sure to set it to manual each time you update any CC programs
 
 <!-- ### 2:
 
@@ -25,6 +26,10 @@
 ### 3:
 
 - Run `Creative_Cloud_Clean_Launcher.bat`
-- Choose the program you want to open, it will kill some extra startup bloat, however, it will remain open. **DO NOT CLOSE IT!**
-- It will kill the residual processes once your CC program is closed, then the launcher will subsequently close itself
-- You can optionally minimize it once you've input the CC program you want to use
+- Choose the program you want to open
+- After launching, You can optionally minimize the launcher
+
+### 4:
+- It will kill some extra startup bloat, however, it will remain open. **DO NOT CLOSE IT!**
+- It needs to kill the residual processes once your CC program is closed
+- Once you've closed your CC program, the launcher will subsequently close itself
