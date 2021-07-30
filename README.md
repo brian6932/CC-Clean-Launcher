@@ -38,10 +38,9 @@
 
 - Run `Creative_Cloud_Clean_Launcher.bat`
 - Choose the program you want to open
-
   * After launching, You can optionally minimize the launcher
 
 ### 5:
 - The launcher will kill some extra startup bloat, however, it will remain open. **DO NOT CLOSE IT!**
 - It needs to kill the residual processes
-- Once you've closed your CC program, the launcher will subsequently close itself
+- Do not close your CC program, kill it from task manager, or alternatively use something like [SuperF4](https://stefansundin.github.io/superf4/), if done correctly the launcher will subsequently close itself
