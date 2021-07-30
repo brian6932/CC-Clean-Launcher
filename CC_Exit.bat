@@ -1,4 +1,5 @@
 @echo off
+timeout 5
 color F
 taskkill /f /im "Adobe Desktop Service.exe"
 taskkill /f /im "AdobeIPCBroker.exe"
