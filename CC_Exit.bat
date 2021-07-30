@@ -1,3 +1,5 @@
+@echo off
+color F
 taskkill /f /im "Adobe Desktop Service.exe"
 taskkill /f /im "AdobeIPCBroker.exe"
 taskkill /f /im "CCXLibrary.exe"
@@ -9,3 +11,4 @@ taskkill /f /im "CCLibrary.exe"
 taskkill /f /im "AdobeUpdateService.exe"
 taskkill /f /im "AdobeExtensionsService.exe"
 taskkill /f /im "Creative Cloud.exe"
+exit
