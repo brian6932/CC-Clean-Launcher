@@ -32,7 +32,7 @@
 
 ### 3:
 
-- [Download the batch files](https://github.com/brian6932/CC-Clean-Launcher/archive/refs/heads/main.zip)
+- Download the batch files for [CC 2021](https://github.com/brian6932/CC-Clean-Launcher/archive/refs/heads/main.zip) or [CC 2022](https://github.com/brian6932/CC-Clean-Launcher/archive/refs/heads/2022.zip)
 
 ### 4:
 
