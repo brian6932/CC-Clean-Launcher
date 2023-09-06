@@ -7,17 +7,15 @@
 
 ### 1:
 - Under services, disable `Adobe Genuine Monitor Service (AGMService)` and `Adobe Genuine Software Integrity Service (AGSService)`
-- And again under services, set `AdobeUpdateService` to manual 
-- These will reset everytime you update your CC programs, so make sure to set it each time
+- And again under services, set `AdobeUpdateService` to manual
+- These will reset every time you update your CC programs, so make sure to set it each time
 
-### 2: 
+### 2:
 - **Optional, but recommended:**
-  * For a more permanent solution, you can delete all files in: `C:\Program Files (x86)\Common Files\Adobe\AdobeGCClient` 
+  * For a more permanent solution, you can delete all files in: `C:\Program Files (x86)\Common Files\Adobe\AdobeGCClient`
   * Then remove all folder user permissions, including system, so that the files don't restore
 <p align="center">
-
   <img src="Screenshots/Permissions.png" />
-
 </p>
 
 
