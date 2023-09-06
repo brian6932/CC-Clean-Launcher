@@ -12,33 +12,26 @@
 
 ### 2:
 - **Optional, but recommended:**
-  * For a more permanent solution, you can delete all files in: `C:\Program Files (x86)\Common Files\Adobe\AdobeGCClient`
+  * For a more permanent solution, you can delete all files in: `C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AdobeGenuineClient`
   * Then remove all folder user permissions, including system, so that the files don't restore
 <p align="center">
   <img src="Screenshots/Permissions.png" />
 </p>
 
-
   * The permanent solution only works for the AG services. The `AdobeUpdateService` is a necessary one, so just make sure to set it to manual each time you update any CC programs
-
-<!-- ### 2:
-
-- Make a backup folder for the following file (you could also rename them, although I prefer to have the backups centralized in a folder with specified path names as their folder paths)
-- Go to: "C:\Program Files\Adobe\Adobe Creative Cloud Experience"
-
- - Cut CCLibrary.exe and paste it into your backup folder -->
 
 ### 3:
 
-- Download the batch files for [CC 2021](https://github.com/brian6932/CC-Clean-Launcher/archive/refs/heads/main.zip) or [CC 2022](https://github.com/brian6932/CC-Clean-Launcher/archive/refs/heads/2022.zip)
+- Download the `ps1` file for [CC 2023](https://github.com/brian6932/CC-Clean-Launcher/archive/refs/heads/2023.zip)
 
 ### 4:
 
-- Run `Creative_Cloud_Clean_Launcher.bat`
-- Choose the program you want to open
-  * After launching, You can optionally minimize the launcher
+- Run `cc.ps1`
+- Optionally put it in `$env:PATH` for easier access
+- If you launch the script when already in a shell, the job will run in the background, so it doesn't interrupt your session (Don't close the shell, until you close your CC program)
+- If you launch the script directly, it will halt the window, and it won't close until your CC program is closed
 
 ### 5:
 - The launcher will kill some extra startup bloat, however, it will remain open. **DO NOT CLOSE IT!**
 - It needs to kill the residual processes
-- Do not close your CC program, kill it from task manager, or alternatively use something like [SuperF4](https://stefansundin.github.io/superf4/), if done correctly the launcher will subsequently close itself
+- Some CC programs don't play well with closing, and require the task to be killed, this isn't usually the case, in such cases, you may find something like [SuperF4](https://stefansundin.github.io/superf4/) handy
