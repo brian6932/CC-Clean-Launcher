@@ -1,8 +1,5 @@
 <h1 align="center">CC-Clean-Launcher - CC without the annoying background processes</h1>
 
-## **Disclaimer:**
-**All batch files must be within the same folder**
-
 ## Usage:
 
 ### 1:
@@ -13,7 +10,7 @@
 ### 2:
 - **Optional, but recommended:**
   * For a more permanent solution, you can delete all files in: `C:\Program Files (x86)\Common Files\Adobe\Adobe Desktop Common\AdobeGenuineClient`
-  * Then remove all folder user permissions, including system, so that the files don't restore
+  * Then remove all folder user permissions, including system, so that the files don't restore (screenshots are a bit old)
 <p align="center">
   <img src="Screenshots/Permissions.png" />
 </p>
@@ -27,7 +24,8 @@
 ### 4:
 
 - Run `cc.ps1`
-- Optionally put it in `$env:PATH` for easier access
+- Select the letter corresponding to the CC program you want to launch, and press enter twice
+- Optionally put it in `$env:PATH` for easier access, installation via Scoop does this by default
 - If you launch the script when already in a shell, the job will run in the background, so it doesn't interrupt your session (Don't close the shell, until you close your CC program)
 - If you launch the script directly, it will halt the window, and it won't close until your CC program is closed
 
