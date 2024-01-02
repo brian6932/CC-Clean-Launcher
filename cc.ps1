@@ -21,7 +21,7 @@ $program = switch ($program) {
 $job = Start-Job -ScriptBlock {
     $program = $using:program
     $proc_name = $program.Substring(($idx = $program.IndexOf('\') + 1), $program.Length - $idx - 4)
-    $killable = [System.Collections.Generic.HashSet[string]]('Adobe Crash Processor', 'AdobeIPCBroker', 'CCXProcess', 'CCLibrary', 'node', 'msedgewebview2')
+    $killable = [System.Collections.Generic.HashSet[string]]('Adobe Crash Processor', 'AdobeIPCBroker', 'CCXProcess', 'CCLibrary')
     $proc = Start-Process -PassThru "C:/Program Files/Adobe/$program"
     Start-Sleep 20
     foreach ($_ in (Get-Process | Sort-Object -Descending -Property StartTime)) {
@@ -33,7 +33,6 @@ $job = Start-Job -ScriptBlock {
         }
     }
     Wait-Process -InputObject $proc
-    'node', 'msedgewebview2' | ForEach-Object { $killable.Remove($_) }
     Get-Process | ForEach-Object {
         if ($killable.Contains($_.Name)) {
             Stop-Process -Force $_
