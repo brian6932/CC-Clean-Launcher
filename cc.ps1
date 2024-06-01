@@ -19,8 +19,7 @@ $program = switch ($program) {
     4 { 'Adobe Illustrator */Support Files/Contents/Windows/Illustrator*.exe' }
 }
 $job = Start-Job -ScriptBlock {
-    $program = Convert-Path "$env:ProgramFiles/Adobe/$Using:program" | Select-Object -First 1
-    $proc_name = $program.Substring(($idx = $program.IndexOf('\') + 1), $program.Length - $idx - 4)
+    $program = (Get-ChildItem "$env:ProgramFiles/Adobe/$Using:program")[0]
     $killable = [Collections.Generic.HashSet[string]](
         'Adobe Crash Processor',
         'AdobeExtensionsService',
@@ -33,7 +32,7 @@ $job = Start-Job -ScriptBlock {
     $proc = Start-Process -PassThru $program
     Start-Sleep 20
     foreach ($_ in (Get-Process | Sort-Object -Descending -Property StartTime)) {
-        if ($_.Name -eq $proc_name) {
+        if ($_.Name -eq $program.BaseName) {
             break
         }
         if ($killable.Contains($_.Name)) {
