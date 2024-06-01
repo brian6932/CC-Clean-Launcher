@@ -12,17 +12,25 @@ $program = $host.ui.PromptForChoice(
     $null
 )
 $program = switch ($program) {
-    0 { 'Adobe Photoshop */Photoshop.exe' }
-    1 { 'Adobe Premiere Pro */Adobe Premiere Pro.exe' }
-    2 { 'Adobe Media Encoder */Adobe Media Encoder.exe' }
-    3 { 'Adobe After Effects */Support Files/AfterFX.exe' }
-    4 { 'Adobe Illustrator */Support Files/Contents/Windows/Illustrator.exe' }
+    0 { 'Adobe Photoshop */Photoshop*.exe' }
+    1 { 'Adobe Premiere Pro */Adobe Premiere Pro*.exe' }
+    2 { 'Adobe Media Encoder */Adobe Media Encoder*.exe' }
+    3 { 'Adobe After Effects */Support Files/AfterFX*.exe' }
+    4 { 'Adobe Illustrator */Support Files/Contents/Windows/Illustrator*.exe' }
 }
 $job = Start-Job -ScriptBlock {
-    $program = $using:program
+    $program = Convert-Path "$env:ProgramFiles/Adobe/$Using:program" | Select-Object -First 1
     $proc_name = $program.Substring(($idx = $program.IndexOf('\') + 1), $program.Length - $idx - 4)
-    $killable = [System.Collections.Generic.HashSet[string]]('Adobe Crash Processor', 'AdobeIPCBroker', 'CCXProcess', 'CCLibrary')
-    $proc = Start-Process -PassThru "C:/Program Files/Adobe/$program"
+    $killable = [Collections.Generic.HashSet[string]](
+        'Adobe Crash Processor',
+        'AdobeExtensionsService',
+        'AdobeIPCBroker',
+        'AdobeNotificationClient',
+        'CCLibrary',
+        'CCXProcess',
+        'Creative Cloud'
+    )
+    $proc = Start-Process -PassThru $program
     Start-Sleep 20
     foreach ($_ in (Get-Process | Sort-Object -Descending -Property StartTime)) {
         if ($_.Name -eq $proc_name) {
