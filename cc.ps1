@@ -11,15 +11,16 @@ $program = $host.ui.PromptForChoice(
     ),
     $null
 )
+$programName = ''
 $program = switch ($program) {
-    0 { 'Adobe Photoshop */Photoshop*.exe' }
-    1 { 'Adobe Premiere Pro */Adobe Premiere Pro*.exe' }
-    2 { 'Adobe Media Encoder */Adobe Media Encoder*.exe' }
-    3 { 'Adobe After Effects */Support Files/AfterFX*.exe' }
-    4 { 'Adobe Illustrator */Support Files/Contents/Windows/Illustrator*.exe' }
+    0 { "Adobe Photoshop */$(($programName = 'Photoshop'))*.exe"; break }
+    1 { "Adobe Premiere Pro */$(($programName = 'Adobe Premiere Pro'))*.exe"; break }
+    2 { "Adobe Media Encoder */$(($programName = 'Adobe Media Encoder'))*.exe"; break }
+    3 { "Adobe After Effects */Support Files/$(($programName = 'AfterFX'))*.exe"; break }
+    4 { "Adobe Illustrator */Support Files/Contents/Windows/$(($programName = 'Illustrator'))*.exe"; break }
 }
 $job = Start-Job -ScriptBlock {
-    $program = (Get-ChildItem "$env:ProgramFiles/Adobe/$Using:program")[0]
+    $program = (Get-Item "$env:ProgramFiles/Adobe/$Using:program" | Sort-Object -Property LastWriteTime -Descending | Where-Object { $_.Name -cmatch "\A$Using:programName(?: \(Beta\))?\.exe\Z" })[0]
     $killable = [Collections.Generic.HashSet[string]](
         'Adobe Crash Processor',
         'AdobeExtensionsService',
