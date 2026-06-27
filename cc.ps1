@@ -28,7 +28,8 @@ $job = Start-Job -ScriptBlock {
         'AdobeNotificationClient',
         'CCLibrary',
         'CCXProcess',
-        'Creative Cloud'
+        'Creative Cloud',
+        'CoreSync'
     )
     $proc = Start-Process -PassThru $program
     Start-Sleep 20
