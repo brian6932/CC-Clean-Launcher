@@ -29,7 +29,8 @@ $job = Start-Job -ScriptBlock {
         'CCLibrary',
         'CCXProcess',
         'Creative Cloud',
-        'CoreSync'
+        'CoreSync',
+        'Creative Cloud Helper'
     )
     $proc = Start-Process -PassThru $program
     Start-Sleep 20
